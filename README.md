@@ -90,9 +90,9 @@ GLide also handle caching of images so next time image will load faster. Also, g
           </manifest>
           
  #### Result 
+
+Different Splash SCreen for different orientation:
  
- Different Splash SCreen for different orientation:
- 
- <img src="Art/landscape.png"> <img src="Art/portrait.png"> 
+<img src="Art/portrait.png"> <img src="Art/landscape.png"> 
 
 
