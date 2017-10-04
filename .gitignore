@@ -44,6 +44,16 @@ jspm_packages
 .AppleDouble
 .LSOverride
 
+gen/
+out/
+
+# Gradle files
+.gradle/
+build/
+/*/build/
+/node_modules
+
+
 # Thumbnails
 ._*
 
