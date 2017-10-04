@@ -91,7 +91,7 @@ GLide also handle caching of images so next time image will load faster. Also, g
           
  #### Result 
  
- <img src="Art/landscape.PNG"> 
- <img src="Art/portrait.PNG"> 
+ <img src="Art/landscape.png"> 
+ <img src="Art/portrait.png"> 
 
 
