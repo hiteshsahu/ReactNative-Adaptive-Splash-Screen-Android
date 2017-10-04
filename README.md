@@ -1,6 +1,4 @@
-# ReactNative-Adaptive-Splash-Screen-Android
-
- ### This project demonstrates how to build a splash screen which adapts according to screen orientation (landscape/portrait) in your ReactNative Project in Android.
+#### This project demonstrates how to build a splash screen which adapts according to screen orientation (landscape/portrait) in your ReactNative Project in Android.
 
 Setup:-
 
@@ -18,7 +16,7 @@ GLide also handle caching of images so next time image will load faster. Also, g
 
 6) Load your Splash images into splash screen layout with the help of Glide. Start the actual app after some time ideally it should be 800mS.
 
-      public class SplashActivity extends AppCompatActivity {
+          public class SplashActivity extends AppCompatActivity {
 
           public static final int DELAY_MILLIS = 800;
 
