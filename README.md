@@ -7,10 +7,19 @@ Setup:-
 2) Put your splash screen Images for portrait mode in `drawable` folder.
 
 3) Put your splash screen Images for landscape mode in the `drawable-land` folder, 
-make sure its name must be same as splash screen image of drawable folder.
+make sure the name of both splash image files must be same.
 
-4) Include Glide Image Loading Lib in your dependency path. Using Glide for Splash Screen loading will make ensure that the app won't throw OOM exception in devices with low memory. 
+4) Include Glide Image Loading Lib in build.gradle dependency path. Using Glide for Splash Screen loading will make ensure that the app won't throw OOM exception in devices with low memory. 
 GLide also handle caching of images so next time image will load faster. Also, glide allows you to load Gifs.
+
+
+                    dependencies {
+                        compile fileTree(dir: "libs", include: ["*.jar"])
+                        compile "com.android.support:appcompat-v7:23.0.1"
+                        compile "com.facebook.react:react-native:+"  // From node_modules
+                        compile 'com.github.bumptech.glide:glide:3.8.0'
+                    }
+
 
 5) Next, create a `SplashActivity` Class with a layout file of your choice. Here I am using an Image as background with a title and Slogan in center of the screen.
 
@@ -47,49 +56,37 @@ GLide also handle caching of images so next time image will load faster. Also, g
 7) Dont forget to register Splash Acrtivity in Android Manifest file. Your Manifest should look like this. Note Launcher is Splash Activity.
      
 
-                         <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-                        package="com.splashproject"
-                        android:versionCode="1"
-                        android:versionName="1.0">
+               <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+               ...
 
-                        <uses-permission android:name="android.permission.INTERNET" />
-                        <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+              <application
+                  android:name=".MainApplication"
+                  ...>
 
-                        <uses-sdk
-                            android:minSdkVersion="16"
-                            android:targetSdkVersion="22" />
+                  <!--Splash Activity-->
+                  <activity
+                      android:name=".SplashActivity"
+                      android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN" />
+                          <category android:name="android.intent.category.LAUNCHER" />
+                      </intent-filter>
+                  </activity>
 
-                        <application
-                            android:name=".MainApplication"
-                            android:allowBackup="true"
-                            android:icon="@mipmap/ic_launcher"
-                            android:label="@string/app_name"
-                            android:theme="@style/AppTheme">
+                  <!--React Activity-->
+                  <activity
+                      android:name=".MainActivity"
+                      android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+                      android:label="@string/app_name"
+                      android:windowSoftInputMode="adjustResize">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN" />
+                          <category android:name="android.intent.category." />
+                      </intent-filter>
+                  </activity>
+                  <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+              </application>
 
-                            <!--Splash Activity-->
-                            <activity
-                                android:name=".SplashActivity"
-                                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-                                <intent-filter>
-                                    <action android:name="android.intent.action.MAIN" />
-                                    <category android:name="android.intent.category.LAUNCHER" />
-                                </intent-filter>
-                            </activity>
-
-                            <!--React Activity-->
-                            <activity
-                                android:name=".MainActivity"
-                                android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-                                android:label="@string/app_name"
-                                android:windowSoftInputMode="adjustResize">
-                                <intent-filter>
-                                    <action android:name="android.intent.action.MAIN" />
-                                    <category android:name="android.intent.category." />
-                                </intent-filter>
-                            </activity>
-                            <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-                        </application>
-
-                    </manifest>
+          </manifest>
 
 
