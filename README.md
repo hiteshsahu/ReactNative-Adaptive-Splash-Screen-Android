@@ -88,5 +88,10 @@ GLide also handle caching of images so next time image will load faster. Also, g
               </application>
 
           </manifest>
+          
+ #### Result 
+ 
+ <img src="Art/landscape.PNG"> 
+ <img src="Art/portrait.PNG"> 
 
 
